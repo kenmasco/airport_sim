@@ -23,21 +23,21 @@ class Airport
     planes << plane
   end
 
-  def full?
-    plane_count == capacity
-  end
-
-  def empty?
-    plane_count == 0
+  def departure(plane)
+    raise "Airport is empty" if empty?
+    @planes.delete(plane)
   end
 
   def plane_count
     planes.count 
   end
 
-  def departure(plane)
-    raise "Airport is empty" if empty?
-    @planes.delete(plane)
+  def full?
+    plane_count == capacity
+  end
+
+  def empty?
+    plane_count == 0
   end
 
 end

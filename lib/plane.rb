@@ -1,19 +1,24 @@
 class Plane
 
-  def initalize
-    land
-  end
-
-  def flying?
-    @flying
-  end
-
-  def airborne
+  def initialize
+    # airborne
     @flying = true
   end
 
+  def flying
+    @flying
+  end
+
+  def flying=(str)
+    @flying=str
+  end
+
+  def flying?
+    flying == true
+  end
+
   def take_off
-    airborne
+    @flying = true
   end
 
   def land
